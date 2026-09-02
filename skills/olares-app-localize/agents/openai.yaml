@@ -1,0 +1,4 @@
+interface:
+  display_name: "Olares app localization"
+  short_description: "Translate English app manifests into six locales"
+  default_prompt: "Use $olares-app-localize to translate this approved English app description into zh-CN, fr-FR, de-DE, ja-JP, it-IT, and es-ES without changing files."

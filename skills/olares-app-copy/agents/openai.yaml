@@ -1,0 +1,4 @@
+interface:
+  display_name: "Olares app copy"
+  short_description: "Draft factual Olares app manifest descriptions"
+  default_prompt: "Use $olares-app-copy to research this app and preview a neutral English OlaresManifest.yaml description without changing files."
