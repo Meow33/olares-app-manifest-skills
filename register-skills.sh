@@ -18,11 +18,5 @@ for skill in olares-app-copy olares-app-localize; do
   done
 done
 
-validator_dir="$source_dir/olares-app-localize"
-if command -v npm >/dev/null 2>&1; then
-  npm install --prefix "$validator_dir" --omit=dev --ignore-scripts --no-audit --no-fund
-else
-  echo "Warning: npm was not found; the localization validator dependency was not installed." >&2
-fi
-
 echo "Skills registered. Restart the agent if they do not appear immediately."
+

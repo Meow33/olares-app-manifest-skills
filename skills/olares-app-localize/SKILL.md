@@ -11,7 +11,7 @@ Use `$olares-app-copy` first when the English source is missing, promotional, in
 
 ## Target locales
 
-The source locale is `en-US`. In preview mode, the default translation targets are `zh-CN`, `fr-FR`, `de-DE`, `ja-JP`, `it-IT`, and `es-ES`. Do not reproduce `en-US` unless the user explicitly asks for a combined package. In write or repository-review mode, discover declared targets from root `spec.locale` and existing locale directories; do not create an undeclared locale unless the user explicitly requests it. Locale identifiers are semantic labels, not permission to impose directory names.
+The source locale is `en-US`. The six translation targets are `zh-CN`, `fr-FR`, `de-DE`, `ja-JP`, `it-IT`, and `es-ES`. Do not reproduce `en-US` in the output unless the user explicitly asks for a combined source-and-translation package. These are semantic locale identifiers, not permission to impose directory names. Follow the repository's existing locale codes and map them to these targets when its naming differs.
 
 Read [references/repository-discovery.md](references/repository-discovery.md) before deciding file paths. Read [references/terminology.md](references/terminology.md) and [references/localization-guide.md](references/localization-guide.md) before translating. Read [references/review-checklist.md](references/review-checklist.md) before finalizing or reviewing existing translations.
 
@@ -29,9 +29,9 @@ Enter write mode only when the user explicitly asks to write, save, apply, creat
 
 ## Workflow
 
-1. Identify the approved English source and check that it is factual, clear, and stable. In preview mode, user-supplied approved English is sufficient. In write or repository-review mode, compare copy fields shared by the root manifest and `i18n/en-US`; unresolved drift blocks file writes and must be reported field by field.
+1. Identify the approved English source and check that it is factual, clear, and stable. Do not translate a known source defect into six more variants.
 2. If repository terminology files are available in the provided context, use them and report any conflict with the bundled terminology reference.
-3. Translate by meaning, not sentence shape. Keep the same facts, scope, conditions, warnings, placeholders, versions, links, paths, commands, HTML, image tags, configuration keys, and Markdown hierarchy. Treat `upgradeDescription` as conditional: when the approved source omits it, omit it in targets; when the source is non-empty, every declared target must contain an equivalent non-empty translation.
+3. Translate by meaning, not sentence shape. Keep the same facts, scope, conditions, warnings, placeholders, versions, links, paths, commands, HTML, image tags, configuration keys, and Markdown hierarchy.
 4. In preview mode, return one clearly labeled YAML block for each requested target locale and stop. Exclude the English source from the generated locale blocks unless requested. Mention unresolved terminology or source ambiguity; do not invent missing facts.
 5. In explicit write mode, discover the repository structure, classify layout confidence, and map semantic locales to actual paths. Update existing files only after that mapping is known. Create missing files only when the repository establishes the pattern or the user approves it.
 6. In write mode, run the bundled validator using the mode that matches the repository:
@@ -64,7 +64,6 @@ Enter write mode only when the user explicitly asks to write, save, apply, creat
 - Do not add marketing language, cultural adaptations, new examples, or new product facts.
 - `metadata.description` stays concise, uses sentence case appropriate to the locale, and has no final punctuation.
 - Localize visible Markdown headings such as `Key features`, but keep Markdown markers unchanged.
-- Do not introduce ATX headings (`#`, `##`, and so on). Preserve standalone bold section-label structure across locales. Tables, HTML, and fenced code require manual review when present in the approved source; do not add them during translation.
 
 ## Handoff
 
@@ -79,4 +78,4 @@ Report:
 
 ## Stop condition
 
-In preview mode, unclear repository structure is never a blocker: generate the translations in the conversation. In write mode, if the application root, canonical source, root/en-US relationship, locale naming, or destination paths remain ambiguous after inspection, do not create files. Return the translations plus the source differences or proposed mapping for an engineer to confirm.
+In preview mode, unclear repository structure is never a blocker: generate the translations in the conversation. In write mode, if the application root, canonical source, locale naming, or destination paths remain ambiguous after inspection, do not create files. Return the translations plus a proposed mapping for an engineer to confirm.

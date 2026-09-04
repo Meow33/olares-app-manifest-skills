@@ -14,8 +14,6 @@ Do not assume that every repository uses `i18n/<locale>/OlaresManifest.yaml`.
    - relationship between the root manifest and localized manifests
    - whether files are generated or maintained directly
 4. Inspect existing target-language files before writing. Preserve extra fields and repository-specific differences that are outside the four copy fields.
-5. Compare copy fields present in both the root manifest and the source-locale manifest. If they differ, list the exact fields and resolve the source of truth before writing.
-6. Read root `spec.locale` when present and compare it with discovered locale directories. Use the declared and established set for write mode; adding a new locale requires an explicit request.
 
 ## Confidence and action
 

@@ -12,7 +12,6 @@ Two reusable skills help Olares engineers create and localize third-party app de
 ```
 
 The script links both skills into Codex, Cursor, and Claude Code. It is safe to run again after moving or updating this repository.
-It also installs the small YAML parsing dependency used by the optional repository validator.
 
 ## Typical use
 
@@ -37,8 +36,6 @@ Use $olares-app-localize to write these translations into <repository path>. Ins
 ```
 
 In write mode, the skill follows existing repository conventions and can run its validator. A repository path or attached file alone does not enable write mode.
-
-`upgradeDescription` is optional. The copy skill includes it only when reliable current-upgrade information exists, and describes user-visible application, configuration, compatibility, data, or required-action changes—not chart implementation work.
 
 The source tree under `skills/` is canonical. Edit it in the repository; registered links update automatically.
 
