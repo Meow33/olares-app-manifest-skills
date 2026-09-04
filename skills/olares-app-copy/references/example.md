@@ -22,16 +22,13 @@ spec:
     - Media files: `appCommon/jellyfin/media`
     - App data: `appData/jellyfin`
   upgradeDescription: |
-    **Back up your Jellyfin data and configuration before upgrading.**
+    Upstream release: [Jellyfin 10.11.11](https://github.com/jellyfin/jellyfin/releases/tag/v10.11.11)
 
-    This update upgrades Jellyfin Server to 10.11.11.
+    **Back up your Jellyfin data and configuration before upgrading.**
 
     **What's changed**
 
     - Fixed user-management and compatibility issues.
-
-    For details, see the [Jellyfin 10.11.11 release notes](https://github.com/jellyfin/jellyfin/releases/tag/v10.11.11).
 ```
 
-The release bullet above is intentionally broad. In real work, keep it only if the exact release notes support it.
-
+The release bullet and backup warning above are intentionally broad. In real work, keep each only when the exact release or deployment evidence supports it. Do not replace them with chart implementation details.
